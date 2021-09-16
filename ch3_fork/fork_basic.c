@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 		// usleep(1000); // 1000 microseconds, 1 milliseconds  
 		// parent process 
 		printf("parent process: pid of my child is %d, my pid is %d\n", pid, getpid());
-		wait(NULL); 
+		wait(NULL); // pid 
 		printf("child is done! I can exit\n"); 
 	}
 	return 0; 
