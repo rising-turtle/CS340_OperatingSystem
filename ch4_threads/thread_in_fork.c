@@ -1,4 +1,6 @@
-/*thread_example.c :  c multiple thread programming in linux
+/*
+    How does fork handle multiple threads in Linux ? 
+
   */
 #include <pthread.h>
 #include <stdio.h>

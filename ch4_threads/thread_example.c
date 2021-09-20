@@ -1,4 +1,8 @@
-/*thread_example.c :  c multiple thread programming in linux
+/*
+
+    thread_example.c :  c multiple thread programming in linux
+    with locks 
+
   */
 #include <pthread.h>
 #include <stdio.h>

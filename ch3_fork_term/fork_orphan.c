@@ -8,7 +8,7 @@
 int main(int argc, char* argv[])
 {
 	pid_t pid; 
-	pid = fork(); 
+	pid = fork(); // A + B 
 
 	if(pid < 0){
 		printf("fork failed\n"); 
@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 	}else{
 		printf("parent process!\n"); 
 		usleep(1000); 
-		wait(NULL); 
+		// wait(NULL); 
 		printf("child is gone! I can exit\n"); 
 	}
 	return 0; 
