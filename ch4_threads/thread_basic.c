@@ -32,8 +32,8 @@ int main(int argc, char* argv[]){
 	pthread_attr_t attr; // thread attributions 
 
 	pthread_attr_init(&attr); // set default attribution of the thread 
-
 	pthread_create(&tid, &attr, runner, argv[1]); // create thread to run the code 
+	// pthread_create(&tid, NULL, runner, argv[1]); // create thread to run the code 
 
 	pthread_join(tid, NULL); // wait for the thread to exit 
 

@@ -19,9 +19,13 @@ void* count(void * param) // thread function
 	int sum_cnt = 0; // save the number of bills equal to bill value 
 	int bill_value = (*(int*)param); // bill value that this thread counts 
 
-	// TODO: count the bill and calculate the sum of the bills 
-	// your code here ... 
-
+	// count the bill and calculate the sum of the bills 
+	for(int i=0; i<NUM_BILLS; i++){
+		if(bill_array[i] == bill_value){
+			sum_cnt++; 
+			sum_local += bill_value; 
+		}
+	}
 	usleep(bill_value*100); 
 	printf("Thread %.16lx is counting %d dollar bill, and I find %d bills and total is: %d \n", 
 							pthread_self(), bill_value, sum_cnt, sum_local); 
@@ -35,16 +39,16 @@ int main(int argc, char* argv[]){
 
 	generate_random(); // randomly generate NUM_CASH cash
 
-	int bill_values[NUM_COUNTERS] = {1, 5, 10, 20, 50, 100}; 
 	pthread_t counters[NUM_COUNTERS]; // thread id 
-	
-	// TODO: Create threads 
-	// Your code here ...
+	int bill_values[NUM_COUNTERS] = {1, 5, 10, 20, 50, 100}; 
 
+	// Create threads 
+	for(int i=0; i<NUM_COUNTERS; i++)
+		pthread_create(&counters[i], NULL, count, (void*)(&bill_values[i])); // create thread to run the code 
 
-	// TODO: wait for threads
-	// Your code here ...  
-
+	// Wait for threads
+	for(int i=0; i<NUM_COUNTERS; i++)
+		pthread_join(counters[i], NULL); // wait for the thread to exit 
 
 	printf("total: %d bills with sum %d dollars\n", sum_cnt_g, sum); 
 

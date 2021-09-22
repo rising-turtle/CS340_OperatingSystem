@@ -11,7 +11,6 @@
 #include <unistd.h>
 #define MAX 10
 pthread_t thread[2];
-pthread_mutex_t mut;
 int number=0;
 void *thread1(void* param)
 {
@@ -19,9 +18,7 @@ void *thread1(void* param)
         for (int i = 0; i < MAX; i++)
         {
                 printf("thread1 : number = %d\n",number);
-                pthread_mutex_lock(&mut);
-                        number++;
-                pthread_mutex_unlock(&mut);
+                number++;
                 sleep(2);
         }
         printf("thread1 : with id %lx exit in process: %d\n", pthread_self(), getpid());
@@ -33,9 +30,7 @@ void *thread2(void* param)
         for (int i = 0; i < MAX; i++)
         {
                 printf("thread2 : number = %d\n",number);
-                pthread_mutex_lock(&mut);
-                        number++;
-                pthread_mutex_unlock(&mut);
+                number++;
                 sleep(3);
         }
         printf("thread2 : with id %lx exit in process: %d\n", pthread_self(), getpid());
@@ -68,7 +63,6 @@ void thread_wait(void)
 }
 int main()
 {
-        pthread_mutex_init(&mut,NULL);
         thread_create();
 
         pid_t pid = fork(); 
