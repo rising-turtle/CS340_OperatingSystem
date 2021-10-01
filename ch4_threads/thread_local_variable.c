@@ -44,8 +44,8 @@ void *thread_run(void *parm)
    gData = (threadparm_t *)parm;
 
    /* Assign the value from global variable to thread specific variable*/
-   TLS_data1 = gData->data1;
-   TLS_data2 = gData->data2;
+   TLS_data1 = gData->data1; // thread 1: 0, thread 2: 1
+   TLS_data2 = gData->data2; // thread 1: 2, thread 2: 4
 
   for(int i=0; i<3; i++){
       foo();

@@ -17,11 +17,13 @@ void* runner(void * param) // thread function
 	argv[0] = "/bin/ps"; 
 	argv[1] = NULL;  
 
-	// pid_t pid = fork();
-	// if(pid == 0)
-	
-	execv(argv[0], argv); 
-
+	pid_t pid = fork();
+	if(pid == 0){
+		sleep(3);
+		execv(argv[0], argv); 
+	}
+	// else
+		// wait(NULL);
 	pthread_exit(0); 
 
 }
