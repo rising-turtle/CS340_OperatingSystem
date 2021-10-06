@@ -39,14 +39,13 @@ void* seller(void* param) // thread function
 {
 	while(1){
 
-		// wait here if there is no waiting customer 
-		sem_wait(&waiting_customers); 
-
-		// serve a waiting customer and release the seat 
-		pthread_mutex_lock(&seat_lock); 
-			++n_empty_seats; // release a customer from seat
-			sem_post(&ready_sellers); // I am ready to serve 
-		pthread_mutex_unlock(&seat_lock); 
+		// your code here 
+		
+		
+		
+		
+		
+		
 
 		// take some rest
 		random_rest(); 
@@ -69,22 +68,22 @@ void* buy_ticket(void* param)
 		
 		if(!quit && n_empty_seats > 0){	// if there is some empty seats 
 			printf("there are %d empty seats. I'm customer %d, and I'll take a seat and wait for a seller\n", n_empty_seats, customer_id);
-			n_empty_seats--; // take a seat 
-			sem_post(&waiting_customers); // singal sellers with a new waiting customer  
-			pthread_mutex_unlock(&seat_lock); // release the lock to seat 
+		
+			// Your code here
 			
-			// wait for a seller to purchase a ticket 
-			sem_wait(&ready_sellers); // wait here if no seller is ready 
-
-			// now a seller is ready, move forward to purchase a ticket 
-			pthread_mutex_lock(&ticket_lock); // access ticket 
-			if(n_ticket > 0){
-				printf("I am customer %d, I am buying ticket %d\n", customer_id, n_ticket--); 
-			}else{
-				quit = true;
-				printf("Tickets have been sold out, no need to wait, customer %d quit\n", customer_id);
-			}
-			pthread_mutex_unlock(&ticket_lock); // release lock 
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		}else{
 			if(quit){
 				printf("Tickets have been sold out, no need to wait, customer %d quit\n", customer_id);
