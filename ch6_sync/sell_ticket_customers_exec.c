@@ -1,11 +1,11 @@
-		                             The sleepy ticket seller 
+/*		                             The sleepy ticket seller 
 There are M customers who want to purchase tickets, N sleepy ticket sellers who are selling ticket in a ticket booth, and K chairs in the waiting hall. 
 
 Customer: a customer arrives the waiting hall, if there is an empty chair, take it and wait for a seller; otherwise, leave, take a walk, and come back again. During waiting in the hall, if there is a seller who is ready, the customer go to the ticket booth and purchase a ticket; otherwise, wait on the chair. After purchasing, the customer will leave for a walk and come back again. If there is no ticket left, leave and does not come back again. 
 
 Seller: a seller first check if there is any customer waiting on chair, call him to ticket booth and sell ticket if there is one; otherwise, wait. After serving a customer, the seller will take a nap and check customer again. 
 
-Note: each time the seller only sell one ticket. 
+Note: each time the seller only sell one ticket. */
 
 #include <pthread.h>
 #include <stdio.h>
