@@ -1,0 +1,12 @@
+1. install cmake 
+
+sudo apt install cmake 
+
+2. create a build folder 
+
+3. enter 'build'
+
+4. run 'cmake ..'
+
+5. run 'make'
+
