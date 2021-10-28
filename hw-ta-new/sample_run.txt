@@ -1,0 +1,50 @@
+	Student 2 hanging out for 3 seconds
+	Student 3 hanging out for 3 seconds
+	Student 4 hanging out for 3 seconds
+	Student 1 hanging out for 3 seconds
+	Student 0 hanging out for 3 seconds
+		Student 3 takes a seat waiting = 1
+		Student 2 takes a seat waiting = 2
+		Student 4 takes a seat waiting = 3
+			Student 1 will try later
+	Student 1 hanging out for 3 seconds
+			Student 0 will try later
+	Student 0 hanging out for 2 seconds
+Student 3 receiving help
+	Student 3 hanging out for 2 seconds
+Helping a student for 3 seconds waiting students = 2
+		Student 3 takes a seat waiting = 3
+			Student 0 will try later
+	Student 0 hanging out for 5 seconds
+			Student 1 will try later
+	Student 1 hanging out for 2 seconds
+Helping a student for 2 seconds waiting students = 2
+Student 2 receiving help
+	Student 2 hanging out for 2 seconds
+		Student 1 takes a seat waiting = 3
+Helping a student for 2 seconds waiting students = 2
+		Student 2 takes a seat waiting = 3
+Student 2 receiving help
+			Student 0 will try later
+	Student 0 hanging out for 4 seconds
+Helping a student for 1 seconds waiting students = 2
+Student 3 receiving help
+Helping a student for 4 seconds waiting students = 1
+Student 1 receiving help
+	Student 1 hanging out for 2 seconds
+		Student 1 takes a seat waiting = 2
+		Student 0 takes a seat waiting = 3
+Helping a student for 5 seconds waiting students = 2
+Student 4 receiving help
+	Student 4 hanging out for 5 seconds
+Helping a student for 2 seconds waiting students = 1
+		Student 4 takes a seat waiting = 2
+Student 4 receiving help
+Helping a student for 2 seconds waiting students = 1
+Student 0 receiving help
+	Student 0 hanging out for 1 seconds
+		Student 0 takes a seat waiting = 2
+Helping a student for 3 seconds waiting students = 1
+Student 1 receiving help
+Helping a student for 3 seconds waiting students = 0
+Student 0 receiving help
