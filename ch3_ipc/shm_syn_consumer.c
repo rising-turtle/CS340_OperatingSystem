@@ -37,14 +37,16 @@ int main(int argc, char **argv) {
         perror("shmat():");
         exit(1);
     }
+    int n; 
+    int temp; 
 
     while(1)
     {
         sem_wait(&memory->full);
         sem_wait(&memory->mutex);
 
-        int n = memory->n;
-        int temp = (memory->array)[n];
+        n = memory->n;
+        temp = (memory->array)[n];
         printf("Removed item: %d\tNumer of tasks left:%d\n",
              (temp),n);
         memory->n--;
