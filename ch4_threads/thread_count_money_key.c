@@ -26,7 +26,8 @@ void* count(void * param) // thread function
 			sum_local += bill_value; 
 		}
 	}
-	usleep(bill_value*100); 
+	usleep(bill_value*100);
+	// usleep(100); 
 	printf("Thread %.16lx is counting %d dollar bill, and I find %d bills and total is: %d \n", 
 							pthread_self(), bill_value, sum_cnt, sum_local); 
 	sum += sum_local;

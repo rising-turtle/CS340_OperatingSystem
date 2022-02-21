@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 		printf("parent process!\n"); 
 		usleep(1000); 
 		// wait(NULL); 
-		printf("child is gone! I can exit\n"); 
+		printf("I will exit\n"); 
 	}
 	return 0; 
 }

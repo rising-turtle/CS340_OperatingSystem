@@ -18,7 +18,7 @@ void* runner(void * param) // thread function
 	argv[1] = NULL;  
 
 	pid_t pid = fork();
-	if(pid == 0){
+	if(pid == 0){ // next try != 0 
 		sleep(3);
 		execv(argv[0], argv); 
 	}

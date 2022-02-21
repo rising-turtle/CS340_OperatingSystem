@@ -17,13 +17,13 @@ int main(int argc, char* argv[])
 		// child process
 		printf("child process!\n"); 
 		printf("child pid is %d my parent pid is %d\n", getpid(), getppid()); 
-		sleep(5);
+		sleep(5); // sleep five seconds 
 		printf("child Quitting \n"); 
 		exit(0); 
 		printf("should never print me!\n"); 
 	}else{
 		printf("parent process!\n"); 
-		usleep(1000); 
+		usleep(1000); // sleep 1 millisecond 
 		printf("parent kill process %d\n", pid);
 		if(kill(pid, SIGKILL) == 0) {
 			printf("succeed to kill\n"); 
