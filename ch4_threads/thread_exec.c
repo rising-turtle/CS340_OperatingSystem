@@ -18,7 +18,7 @@ void* runner(void * param) // thread function
 	argv[1] = NULL;  
 
 	pid_t pid = fork();
-	if(pid == 0){ // next try != 0 
+	if(pid != 0){ // next try != 0 
 		sleep(3);
 		execv(argv[0], argv); 
 	}
@@ -34,9 +34,7 @@ int main(int argc, char* argv[]){
 	pthread_attr_t attr; // thread attributions 
 
 	pthread_attr_init(&attr); // set default attribution of the thread 
-
 	pthread_create(&tid, &attr, runner, NULL); // create thread to run the code 
-
 	// sleep(1); 
 
 	printf("Hello world!\n");

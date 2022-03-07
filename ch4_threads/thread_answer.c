@@ -7,9 +7,12 @@ void *runner();
 
 int main(){
    pthread_t tid; 
-   pthread_create(&tid,NULL,runner,NULL);
+   pid_t pid = fork();  
+   if(pid != 0)
+      pthread_create(&tid,NULL,runner,NULL);
    printf("Hello world %d. \n", getpid());
-   pthread_join(tid,NULL);
+   if(pid!= 0) 
+      pthread_join(tid,NULL);
    printf("Hello world %d. \n", getpid());
 }
 
