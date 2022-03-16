@@ -20,6 +20,9 @@ void* func1(void* param){
 	}
 	printf("Thread B exit \n");
 	sem_post(&semaphore);  
+	int v; 
+	sem_getvalue(&semaphore, &v); 
+	printf("v1 = %d\n", v); 
 	pthread_exit(0);
 }
 
@@ -31,6 +34,9 @@ void* func2(void* param){
 	}
 	printf("Thread C exit\n");
 	sem_post(&semaphore);
+	int v; 
+	sem_getvalue(&semaphore, &v); 
+	printf("v2 = %d\n", v); 
 	pthread_exit(0);
 }
 
@@ -39,7 +45,10 @@ int main(int argc, char* argv[]){
 	// initialize semaphore 
 	/*sem_init(*mutex, pshared, ini_value)*/
 	
-	sem_init(&semaphore, 0, 0);
+	sem_init(&semaphore, 0, -10);
+	int v; 
+	sem_getvalue(&semaphore, &v); 
+	printf("v = %d\n", v); 
 
 	pthread_t tid1, tid2;  
 	pthread_create(&tid1, NULL, func1, NULL); // thread B
@@ -47,6 +56,7 @@ int main(int argc, char* argv[]){
 
 	// pthread_join(&tid1); 
 	// pthread_join(&tid2); 
+	// sleep(3);
 	sem_wait(&semaphore); 
 	sem_wait(&semaphore);
 	sem_destroy(&semaphore);
