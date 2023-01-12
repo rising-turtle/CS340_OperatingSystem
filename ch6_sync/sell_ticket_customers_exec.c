@@ -42,9 +42,7 @@ void* seller(void* param) // thread function
 		// your code here 
 		
 		
-		
-		
-		
+
 		
 
 		// take some rest
@@ -73,15 +71,7 @@ void* buy_ticket(void* param)
 			
 			
 			
-			
-			
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		
 		}else{

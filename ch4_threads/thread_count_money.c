@@ -51,8 +51,6 @@ int main(int argc, char* argv[]){
 	return 0; 
 }
 
-
-
 void generate_random(){
 
 	// 1 -> 1 dollar 
