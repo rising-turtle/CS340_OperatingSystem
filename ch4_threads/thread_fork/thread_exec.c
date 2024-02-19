@@ -13,12 +13,13 @@ void* runner(void * param) // thread function
 {
 	printf("I am thread %.16lx\n", pthread_self()); 
 	
-	char* argv[2]; 
+	char* argv[3]; 
 	argv[0] = "/bin/ps"; 
-	argv[1] = NULL;  
+	argv[1] = "-ef"; 
+	argv[2] = NULL; 
 
 	pid_t pid = fork();
-	if(pid != 0){ // next try != 0 
+	if(pid == 0){ // next try != 0 
 		sleep(3);
 		execv(argv[0], argv); 
 	}
