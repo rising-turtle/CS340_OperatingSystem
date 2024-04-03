@@ -21,4 +21,6 @@ struct wrapper
     sem_t mutex;
     sem_t full;
     int n;
+    sem_t mutex_N_of_producers; 
+    int N_of_producers; 
 };

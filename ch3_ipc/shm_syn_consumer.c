@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 
         sem_post(&memory->mutex);
         sem_post(&memory->empty);
-        usleep(30000);
+        usleep(20000); // sleep 20 ms 
     }
 
 }
