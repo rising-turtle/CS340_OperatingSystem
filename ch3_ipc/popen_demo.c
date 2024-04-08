@@ -4,7 +4,9 @@
 #include <sys/types.h>
 #include <stdlib.h>
 
-char * default_cmd = "ps -eo user,pid,ppid,nlwp,pcpu,pmem,comm";
+// char * default_cmd = "ps -eo user,pid,ppid,nlwp,pcpu,pmem,comm";
+// char * default_cmd = "ps -e | grep defunct";  // find out zombine processes
+char * default_cmd = "top -b -n 1 | grep Tasks"; // find out the number of zombines 
 
 int main(int argc, char* argv[]){
 
