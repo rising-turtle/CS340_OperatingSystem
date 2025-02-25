@@ -49,7 +49,7 @@ int main(int argc, char* argv[]){
 	// pthread_join(&tid2); 
 	// B, C -> A 
 	sem_wait(&semaphore); 
-	// sem_wait(&semaphore);
+  // sem_wait(&semaphore);
 	sem_destroy(&semaphore);
 	printf("Thread A exit \n"); 
 

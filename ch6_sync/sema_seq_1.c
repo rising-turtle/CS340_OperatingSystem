@@ -45,7 +45,7 @@ int main(int argc, char* argv[]){
 	// initialize semaphore 
 	/*sem_init(*mutex, pshared, ini_value)*/
 	
-	sem_init(&semaphore, 0, -10);
+	sem_init(&semaphore, 0, -100);
 	int v; 
 	sem_getvalue(&semaphore, &v); 
 	printf("v = %d\n", v); 
