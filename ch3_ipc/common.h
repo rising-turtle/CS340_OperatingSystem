@@ -16,8 +16,6 @@ struct wrapper
 {
     int array[SIZE_OF_ARRAY];
     sem_t empty;
-    // sem_t pmutex;
-    // sem_t cmutex;
     sem_t mutex;
     sem_t full;
     int n;

@@ -25,8 +25,6 @@ void atexit_function() {
         printf("destroy semaphore here\n");
         rc = shmctl(memoryID, IPC_RMID, NULL);
         rc = shmdt(memory);
-        // sem_destroy(&memory->pmutex);
-        // sem_destroy(&memory->cmutex);
         sem_destroy(&memory->mutex);
         sem_destroy(&memory->empty);
         sem_destroy(&memory->full);
