@@ -8,23 +8,27 @@
 
 #define NUM_TICK_SELLER 3
 static const int TOTAL_TICKET = 1000000;
-int n_ticket = TOTAL_TICKET;  // shared between threads 
+int n_ticket = TOTAL_TICKET;  // shared between threads
 
 void* seller(void* param) // thread function 
 {
   int* sold_ticket = (int*)(param); 
-  while(n_ticket > 0){
-    n_ticket--;
-    ++(*sold_ticket);
+  
+  while(1){
+      if(n_ticket > 0){
+        n_ticket--;
+        ++(*sold_ticket);
+      }else{
+        break;
+      }
   }
 	pthread_exit(0); 
 
 }
 
 int main(int argc, char* argv[]){
-
 	pthread_t tid[NUM_TICK_SELLER]; // thread id 
-  int actual_tickets[NUM_TICK_SELLER] = {0}; 
+    int actual_tickets[NUM_TICK_SELLER] = {0}; 
   
 	for(int i=0; i<NUM_TICK_SELLER; i++){
 		pthread_create(&tid[i], NULL, seller, &actual_tickets[i]); 
@@ -40,9 +44,7 @@ int main(int argc, char* argv[]){
     total_tickets += actual_tickets[i]; 
   } 
 	printf("Main: total tickets %d Actually %d tickets have been sold \n", TOTAL_TICKET, total_tickets); 
-
 	return 0; 
 
 }
-
 
